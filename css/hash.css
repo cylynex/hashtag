@@ -1,0 +1,12 @@
+html,body { margin:0; color:#667; }
+#header { margin-top:42px; width:100%; }
+#logo { font-size:80px; text-align:center; font-family:Georgia, "Times New Roman", Times, serif }
+#hashform { margin:0 auto; width:400px; }
+
+.status_pass { color:#449839; font-weight:bold; display:none; border:2px dotted #449839; padding:12px; margin:12px 0; font-size:16px; }
+.status_fail { color:#fee; font-weight:bold; display:none; border:2px dotted #449839; padding:12px; margin:12px 0; font-size:16px; }
+#statusbox { display:none; border:2px dotted #667; color:#667; font-size:16px; margin:12px 0; padding:12px 0 18px 12px; }
+
+#addnewtagbox { background:#fee; padding:12px; border:1px solid #667; }
+#addnewlocbox { background:#b4ebaa; padding:12px; border:1px solid #667; }
+#hashsearchbox { background:#b5c1ef; padding:12px; border:1px solid #667; }
