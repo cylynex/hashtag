@@ -19,7 +19,7 @@
     </div>
     <!-- /.row -->
     
-    <?php /*
+    <?php /**/ ?>
     <div class="row">
     	<div class="col-lg-4">
         
@@ -30,6 +30,9 @@
             foreach ($qo AS $tagcat) {
                 echo $tagcat->category."<br>";
             }
+			
+			$allcats = Categories::find_all();
+		
             ?>
             
             
@@ -43,7 +46,7 @@
         	<b>
         </div>
     </div>
-	*/ ?>
+	<? /**/ ?>
     
     
     <form method="post" action="">

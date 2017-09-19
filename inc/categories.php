@@ -1,7 +1,13 @@
 <?php
 
-class Categories extends Database {
+class Categories extends DatabaseObjects {
 	
+	protected static $db_table = "categories";	
+	protected static $db_table_fields = array('cat_id','category');
+	
+	public $cat_id;
+	public $category;
+
 	public function categories_selector() {
 		
 		global $database;
