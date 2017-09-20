@@ -54,7 +54,7 @@
             <div class="col-sm-4">
             	<div class="form-group">
                 	<?php $c = new Categories(); ?>
-                    <label for="category1">Category 1 (Weight 60)</label>
+                    <label for="category1">Category 1 (Weight 60%)</label>
                     <select name="category1" id="category1" class="form-control" onchange="category_select('1');">
                     	<option default value="0">Select Category</option>
                     	<?php $c->categories_selector();?>
@@ -66,7 +66,7 @@
             <div class="col-sm-4">
             	<div class="form-group">
                 	<?php $c = new Categories(); ?>
-                    <label for="category2">Category 2 (Weight 25)</label>
+                    <label for="category2">Category 2 (Weight 25%)</label>
                     <select name="category2" id="category2" class="form-control" onchange="category_select('2');">
                     	<option default value="0">Select Category</option>
                     	<?php $c->categories_selector();?>
@@ -78,7 +78,7 @@
             <div class="col-sm-4">
             	<div class="form-group">
                 	<?php $c = new Categories(); ?>
-                    <label for="category3">Category 3 (Weight 15)</label>
+                    <label for="category3">Category 3 (Weight 15%)</label>
                     <select name="category3" id="category3" class="form-control" onchange="category_select('3');">
                     	<option default value="0">Select Category</option>
                     	<?php $c->categories_selector();?>

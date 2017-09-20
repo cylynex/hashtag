@@ -5,6 +5,7 @@ defined('SITE_ROOT') ? null : define('SITE_ROOT', '/');
 
 // Includes
 require_once("database.php");
+require_once("functions.php");
 require_once("categories.php");
 require_once("tags.php");
 
