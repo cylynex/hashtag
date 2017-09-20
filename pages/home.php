@@ -19,7 +19,7 @@
     </div>
     <!-- /.row -->
     
-    <?php /**/ ?>
+    <?php /*
     <div class="row">
     	<div class="col-lg-4">
         
@@ -46,7 +46,7 @@
         	<b>
         </div>
     </div>
-	<? /**/ ?>
+	*/ ?>
     
     
     <form method="post" action="">
