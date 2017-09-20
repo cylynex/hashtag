@@ -5,7 +5,7 @@
         <div class="col-lg-12">
             <h1 class="page-header">
                 #tag
-                <small>where the lil tags go</small>
+                <small>social media tag generator</small>
             </h1>
             <ol class="breadcrumb">
                 <li>
@@ -18,7 +18,7 @@
     
     <div class="row">
     	<div class="col-sm-12">
-        	Tag Finder currently for just instagram.  Weighted hub accounts and weighted based on selection of category.
+        	Tag Finder currently for instagram and flickr.  Weighted hub accounts and weighted based on selection of category.
         </div>
     </div>
        

@@ -108,7 +108,7 @@ function display_category() {
 			$smid = $catdata->tag_sm;
 			$socialdata = new Social;
 			$socialname = $socialdata->find_by_id($smid,"social_id");
-			echo "<td>".$socialname->social."</td>";
+			echo "<td><i class='fa fa-fw fa-2x point ".$socialname->social_icon."' title='".$socialname->social."' alt='".$socialname->social."'></i></td>";
 		
 			echo "</tr>";
         }
