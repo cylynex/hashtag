@@ -63,9 +63,13 @@ function add_tag() {
 		$addtag->tag_hub = 0;
 	}
 	
-	$addtag->create();
+	if ($addtag->tag_verify_unique()) {
+		$addtag->create();
+		echo "Added Tag.";
+	} else {
+		echo "Could not add tag, it already exists within that category.";
+	}
 	
-	echo "Added Tag.  Need error checking added here!";
 }
 
 

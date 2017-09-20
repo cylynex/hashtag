@@ -20,6 +20,18 @@ class Tags extends DatabaseObjects {
 		
 	}
 	
+	public function tag_verify_unique() {
+		$tag = $this->tag;
+		$category = $this->tag_category;
+		$sql = " tag = '$tag' AND tag_category = '$category' ";
+		if ($out = $this->check_duplicate_data($sql)) { 
+			return true;
+		} else { 
+			return false;
+		}
+				
+	}
+	
 	
 
 

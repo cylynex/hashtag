@@ -43,8 +43,10 @@ function add_new_tag() {
 		success: function(output) {
 			//alert(output);
 			$('#StatusDisplay').show();
-			$('#statusbox').html(output);			
-			$('#StatusDisplay').fadeOut(4500);
+			$('#statusbox').html(output);
+			//$('#StatusDisplay').fadeOut(3500);
+			$('#tag').val('');
+			$('#tag_category').val('');
 		}
 	});
 	
