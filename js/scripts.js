@@ -1,4 +1,4 @@
-function category_select(section) {
+function category_select(section,socialmedia) {
 	
 	// section = which weight to use (1/2/3)
 	var sectionid = "#category"+section;
@@ -10,7 +10,9 @@ function category_select(section) {
 	$.ajax({
 		url: '/js/ajax.php',
 		data: {
-			gettags:gettags,section:section
+			gettags:gettags,
+			section:section,
+			socialmedia:socialmedia
 		},
 		type: 'POST',
 		success: function(output) {
@@ -30,6 +32,7 @@ function add_new_tag() {
 	var tag = $('#tag').val();
 	var tag_hub = $('#tag_hub').is(":checked");
 	var tag_category = $('#tag_category').val();
+	var tag_sm = $('#tag_sm').val();
 	
 	$.ajax({
 		url: '/js/ajax.php',
@@ -37,7 +40,8 @@ function add_new_tag() {
 			add_tag:add_tag,
 			tag:tag,
 			tag_hub:tag_hub,
-			tag_category:tag_category
+			tag_category:tag_category,
+			tag_sm:tag_sm
 		},
 		type: 'POST',
 		success: function(output) {

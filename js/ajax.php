@@ -6,6 +6,7 @@ function get_tags() {
 	
 	// category
 	$tc = $_POST['gettags'];
+	$socialmedia = $_POST['socialmedia'];
 	
 	// Sort section weight (15 / 10 / 5)
 	switch($_POST['section']) {
@@ -27,7 +28,7 @@ function get_tags() {
 	// $tags = Tags::query("SELECT * FROM tags WHERE tag_category = '$tc' ORDER BY rand() LIMIT $limit");
 
 	// Hub weighted query (approx 75% - hardcoded for now)
-	$tags = Tags::query("SELECT * FROM tags WHERE tag_category = '$tc' AND tag_hub = '1' AND tag_approved = '1' ORDER BY rand() LIMIT $limithub ");
+	$tags = Tags::query("SELECT * FROM tags WHERE tag_category = '$tc' AND tag_hub = '1' AND tag_approved = '1' AND tag_sm = '$socialmedia' ORDER BY rand() LIMIT $limithub ");
 			
 	// Output
 	$tagcount = 0;
@@ -44,7 +45,7 @@ function get_tags() {
 	// echo "<br>Tags so far: $tagcount<br>";
 	// echo "Tags to finish: $tagfinish<br>";
 	
-	$tags = Tags::query("SELECT * FROM tags WHERE tag_category = '$tc' AND tag_hub = '0' AND tag_approved = '1' ORDER BY rand() LIMIT $tagfinish ");
+	$tags = Tags::query("SELECT * FROM tags WHERE tag_category = '$tc' AND tag_hub = '0' AND tag_approved = '1' AND tag_sm = '$socialmedia' ORDER BY rand() LIMIT $tagfinish ");
 	foreach ($tags AS $tagout) {
 		echo "#".$tagout->tag." ";
 	}		
@@ -58,6 +59,7 @@ function add_tag() {
 	$addtag->tag = $_POST['tag'];
 	$addtag->tag_category = $_POST['tag_category'];
 	$addtag->tag_approved = 0;
+	$addtag->tag_sm = $_POST['tag_sm'];
 	if ($_POST['tag_hub'] == "true") {
 		$addtag->tag_hub = 1;
 	} else {
@@ -86,12 +88,12 @@ function display_category() {
 	$count = 1;
 	?>
     
-    <table class="table">
+    <table class="table hover">
     <tr>
     	<th>ID</th>
         <th>Tag</th>
         <th>Is Hub?</th>
-        <th>SM</th>
+        <th>Social</th>
     </tr>
     <tbody>
 	
@@ -101,7 +103,13 @@ function display_category() {
             echo "<td>".$catdata->tag_id."</td>";
             echo "<td>".$catdata->tag."</td>";
             if ($catdata->tag_hub == 1) { echo "<td>YES</td>"; } else { echo "<td>NO</td>"; } 
-			echo "<td>TBA</td>";
+			
+			// Translate social stuff to words
+			$smid = $catdata->tag_sm;
+			$socialdata = new Social;
+			$socialname = $socialdata->find_by_id($smid,"social_id");
+			echo "<td>".$socialname->social."</td>";
+		
 			echo "</tr>";
         }
         ?>

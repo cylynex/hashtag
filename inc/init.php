@@ -8,6 +8,7 @@ require_once("database.php");
 require_once("functions.php");
 require_once("categories.php");
 require_once("tags.php");
+require_once("social.php");
 
 // Don't load for ajax
 if ($_SERVER['REQUEST_URI'] != "/js/ajax.php") { ?>

@@ -15,6 +15,10 @@ function fetch_page() {
 			$page = "instagram.php";
 			$GLOBALS['pagetitle'] = "Find Tag - ";
 			break;
+		case "flickr" :
+			$page = "flickr.php";
+			$GLOBALS['pagetitle'] = "Find Tag - ";
+			break;
 		case "tagviewer" :
 			$page = "tagviewer.php";
 			$GLOBALS['pagetitle'] = "Find Tag - ";
