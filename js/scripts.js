@@ -1,7 +1,9 @@
-function category_select(category_id) {
-
-	var gettags = 1;
-
+function category_select(section) {
+	
+	// section = which weight to use (1/2/3)
+	var sectionid = "#category"+section;
+	var gettags = $(sectionid).val();
+	
 	// Ajax query for tag data
 	$.ajax({
 		url: '/js/ajax.php',
@@ -10,14 +12,13 @@ function category_select(category_id) {
 		},
 		type: 'POST',
 		success: function(output) {
-			alert(output);
-			//status_red(output);
-			//$(divtohide).fadeOut(1000);
+			//alert(output);
+			// Output
+			$('#result_tags').html(output);
 		}			
 	});	
 	
 	
 	
-	// Output
-	$('#result_tags').html("tags will go here");
+	
 }

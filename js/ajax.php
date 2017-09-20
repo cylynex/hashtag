@@ -4,13 +4,15 @@ include ("../inc/init.php");
 // Get the tags for output from a category
 function get_tags() {
 	
-	//$cats = Categories::query("SELECT * FROM categories WHERE category = 'Sunset' ");
-	//$tags = new Tags;
-	//$tags->tag_poll();
-	$tags = Tags::query("SELECT * FROM tags");
-	var_dump($tags);
+	// category
+	$tc = $_POST['gettags'];
 	
-	
+	$tags = Tags::query("SELECT * FROM tags WHERE tag_category = '$tc'");
+	//echo json_encode($tags);
+	foreach ($tags AS $tagout) {
+		echo "#".$tagout->tag." ";
+	}
+		
 }
 
 
