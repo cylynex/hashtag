@@ -18,6 +18,32 @@ class Categories extends DatabaseObjects {
 	}
 	
 	
+	// Category viewer
+	public function category_list() {
+		$out = $this->query("SELECT * FROM categories");
+		
+		?>
+        <table class="table hover">
+        <tr>
+        	<th width="10%">ID</th>
+            <th>Category</th>
+        </tr>
+        <tbody>
+        
+        <?php		
+		foreach ($out AS $cat) {
+			echo "<tr>";
+				echo "<td>".$cat->cat_id."</td>";
+				echo "<td>".$cat->category."</td>";
+			echo "</tr>";
+		}
+		?>
+        </tbody>
+        </table>
+        <?php
+	}
+	
+	
 
 
 
