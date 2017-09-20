@@ -12,7 +12,7 @@
                     <i class="fa fa-dashboard"></i>  <a href="/">Dashboard</a>
                 </li>
                 <li class="active">
-                    <i class="fa fa-file"></i> Add Tag
+                    <i class="fa fa-file"></i> Add New Tag
                 </li>
             </ol>
         </div>
