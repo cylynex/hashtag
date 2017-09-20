@@ -11,7 +11,7 @@ class Categories extends DatabaseObjects {
 	public function categories_selector() {
 		
 		global $database;
-		$out = $this->query("SELECT * FROM categories");
+		$out = $this->query("SELECT * FROM categories ORDER BY category ASC");
 		foreach($out AS $cat) {
 			?><option value="<?php echo $cat->cat_id?>"><?php echo $cat->category;?></option><?php
 		}
@@ -20,7 +20,7 @@ class Categories extends DatabaseObjects {
 	
 	// Category viewer
 	public function category_list() {
-		$out = $this->query("SELECT * FROM categories");
+		$out = $this->query("SELECT * FROM categories ORDER BY category ASC");
 		
 		?>
         <table class="table hover">
