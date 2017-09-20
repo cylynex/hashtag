@@ -47,12 +47,28 @@ function get_tags() {
 	$tags = Tags::query("SELECT * FROM tags WHERE tag_category = '$tc' AND tag_hub = '0' ORDER BY rand() LIMIT $tagfinish ");
 	foreach ($tags AS $tagout) {
 		echo "#".$tagout->tag." ";
+	}		
+}
+
+
+// Add new tag
+function add_tag() {
+	
+	$addtag = new Tags;
+	$addtag->tag = $_POST['tag'];
+	$addtag->tag_category = $_POST['tag_category'];
+	if ($_POST['tag_hub'] == "true") {
+		$addtag->tag_hub = 1;
+	} else {
+		$addtag->tag_hub = 0;
 	}
 	
+	$addtag->create();
 	
-		
+	echo "Added Tag.  Need error checking added here!";
 }
 
 
 if ($_POST['gettags']) { get_tags(); }
+if ($_POST['add_tag']) { add_tag(); }
 ?>

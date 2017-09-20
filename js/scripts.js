@@ -17,9 +17,37 @@ function category_select(section) {
 			//alert(output);
 			$(resultbox).html(output);
 		}			
-	});	
+	});		
+}
+
+
+// Add new tags
+function add_new_tag() {
 	
 	
+	// get the data
+	var add_tag = 1;
+	var tag = $('#tag').val();
+	var tag_hub = $('#tag_hub').is(":checked");
+	var tag_category = $('#tag_category').val();
 	
+	$.ajax({
+		url: '/js/ajax.php',
+		data: { 
+			add_tag:add_tag,
+			tag:tag,
+			tag_hub:tag_hub,
+			tag_category:tag_category
+		},
+		type: 'POST',
+		success: function(output) {
+			//alert(output);
+			$('#StatusDisplay').show();
+			$('#statusbox').html(output);			
+			$('#StatusDisplay').fadeOut(4500);
+		}
+	});
+	
+	return false;
 	
 }

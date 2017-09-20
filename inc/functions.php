@@ -11,6 +11,10 @@ function fetch_page() {
 			$page = "addtag.php";
 			$GLOBALS['pagetitle'] = "Add Tag - ";
 			break;
+		case "findtags" :
+			$page = "findtags.php";
+			$GLOBALS['pagetitle'] = "Find Tag - ";
+			break;
 		default:
 			$page = "home.php";
 			$GLOBALS['pagetitle'] = "";
@@ -40,6 +44,33 @@ function sanitize($term) {
 	$term = preg_replace('/[^A-Za-z0-9\-_@. ]/', '', $term); // Removes special chars.
 	return $term;
 }
+
+
+// Error Box Display (for ajax)
+function status_box() {
+	?>
+    <div class="row" id="StatusDisplay">
+    	 <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-exclamation-triangle fa-fw"></i> Status
+                    <div class="pull-right"></div>
+                </div>
+                                    
+                <div class="panel-body">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                        	<div id="statusbox"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php
+}
+
 
 
 ?>

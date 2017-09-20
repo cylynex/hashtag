@@ -11,83 +11,17 @@
                 <li>
                     <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
                 </li>
-                <li class="active">
-                    <i class="fa fa-file"></i> Tag Finder
-                </li>
+                
             </ol>
         </div>
     </div>
-    <!-- /.row -->
     
-    <?php /*
     <div class="row">
-    	<div class="col-lg-4">
-        
-            <b>Categories</b><br>
-            <?php
-            $qo = $db->query("SELECT * FROM categories");
-            
-            foreach ($qo AS $tagcat) {
-                echo $tagcat->category."<br>";
-            }
-			
-			$allcats = Categories::find_all();
-		
-            ?>
-            
-            
-            <br /><br />
-            <!--INCLUDES: <?php echo INCLUDES_PATH; ?> <br />-->
-            ROOT: <?php echo SITE_ROOT; ?>
-            
-        </div>
-        
-        <div class="col-lg-4">
-        	<b>
+    	<div class="col-sm-12">
+        	Tag Finder currently for just instagram.  Weighted hub accounts and weighted based on selection of category.
         </div>
     </div>
-	*/ ?>
-    
-    
-    <form method="post" action="">
-        <div class="row">
-            <div class="col-sm-4">
-            	<div class="form-group">
-                	<?php $c = new Categories(); ?>
-                    <label for="category1">Category 1 (Weight 60%)</label>
-                    <select name="category1" id="category1" class="form-control" onchange="category_select('1');">
-                    	<option default value="0">Select Category</option>
-                    	<?php $c->categories_selector();?>
-                    </select>
-                    
-                </div>
-            </div>
-            
-            <div class="col-sm-4">
-            	<div class="form-group">
-                	<?php $c = new Categories(); ?>
-                    <label for="category2">Category 2 (Weight 25%)</label>
-                    <select name="category2" id="category2" class="form-control" onchange="category_select('2');">
-                    	<option default value="0">Select Category</option>
-                    	<?php $c->categories_selector();?>
-                    </select>
-                    
-                </div>
-            </div>
-            
-            <div class="col-sm-4">
-            	<div class="form-group">
-                	<?php $c = new Categories(); ?>
-                    <label for="category3">Category 3 (Weight 15%)</label>
-                    <select name="category3" id="category3" class="form-control" onchange="category_select('3');">
-                    	<option default value="0">Select Category</option>
-                    	<?php $c->categories_selector();?>
-                    </select>
-                    
-                </div>
-            </div>
-        </div>
-        
+       
         <?php
 		// Helper to add dummy test data
 		/*
@@ -103,7 +37,6 @@
 		*/
 		?>
     
-    </form>
     
     <div class="row">
     	<div class="col-sm-12">
