@@ -3,12 +3,13 @@
 class Tags extends DatabaseObjects {
 	
 	protected static $db_table = "tags";	
-	protected static $db_table_fields = array('tag_id','tag','tag_category','tag_hub');
+	protected static $db_table_fields = array('tag_id','tag','tag_category','tag_hub','tag_approved');
 	
 	public $tag_id;
 	public $tag;
 	public $tag_category;
-	public $tag_hug;
+	public $tag_hub;
+	public $tag_approved;
 
 	public function tag_poll() {
 		

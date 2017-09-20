@@ -27,7 +27,7 @@ function get_tags() {
 	// $tags = Tags::query("SELECT * FROM tags WHERE tag_category = '$tc' ORDER BY rand() LIMIT $limit");
 
 	// Hub weighted query (approx 75% - hardcoded for now)
-	$tags = Tags::query("SELECT * FROM tags WHERE tag_category = '$tc' AND tag_hub = '1' ORDER BY rand() LIMIT $limithub ");
+	$tags = Tags::query("SELECT * FROM tags WHERE tag_category = '$tc' AND tag_hub = '1' AND tag_approved = '1' ORDER BY rand() LIMIT $limithub ");
 			
 	// Output
 	$tagcount = 0;
@@ -44,7 +44,7 @@ function get_tags() {
 	// echo "<br>Tags so far: $tagcount<br>";
 	// echo "Tags to finish: $tagfinish<br>";
 	
-	$tags = Tags::query("SELECT * FROM tags WHERE tag_category = '$tc' AND tag_hub = '0' ORDER BY rand() LIMIT $tagfinish ");
+	$tags = Tags::query("SELECT * FROM tags WHERE tag_category = '$tc' AND tag_hub = '0' AND tag_approved = '1' ORDER BY rand() LIMIT $tagfinish ");
 	foreach ($tags AS $tagout) {
 		echo "#".$tagout->tag." ";
 	}		
@@ -57,6 +57,7 @@ function add_tag() {
 	$addtag = new Tags;
 	$addtag->tag = $_POST['tag'];
 	$addtag->tag_category = $_POST['tag_category'];
+	$addtag->tag_approved = 0;
 	if ($_POST['tag_hub'] == "true") {
 		$addtag->tag_hub = 1;
 	} else {
@@ -64,8 +65,12 @@ function add_tag() {
 	}
 	
 	if ($addtag->tag_verify_unique()) {
-		$addtag->create();
-		echo "Added Tag.";
+		if ( (!empty($addtag->tag)) && (!empty($addtag->tag_category)) ) { 
+			$addtag->create();
+			echo "Added Tag <b>{$addtag->tag}</b>.  If approved, it will be added to the pool.";
+		} else { 
+			echo "Cannot add empty tag or category.";
+		}
 	} else {
 		echo "Could not add tag, it already exists within that category.";
 	}
