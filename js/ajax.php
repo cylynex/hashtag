@@ -78,6 +78,41 @@ function add_tag() {
 }
 
 
+// Display Category
+function display_category() {
+	$showcat = new Tags;
+	$cat = intval($_POST['category']);
+	$output = $showcat->tag_poll(" WHERE tag_category = '$cat' ");
+	$count = 1;
+	?>
+    
+    <table class="table">
+    <tr>
+    	<th>ID</th>
+        <th>Tag</th>
+        <th>Is Hub?</th>
+        <th>SM</th>
+    </tr>
+    <tbody>
+	
+		<?php    
+        foreach ($output AS $catdata) {
+            echo "<tr>";
+            echo "<td>".$catdata->tag_id."</td>";
+            echo "<td>".$catdata->tag."</td>";
+            if ($catdata->tag_hub == 1) { echo "<td>YES</td>"; } else { echo "<td>NO</td>"; } 
+			echo "<td>TBA</td>";
+			echo "</tr>";
+        }
+        ?>
+    </tbody>
+    </table>
+    
+    <?php
+}
+
+
 if ($_POST['gettags']) { get_tags(); }
 if ($_POST['add_tag']) { add_tag(); }
+if ($_POST['display_category']) { display_category(); }
 ?>

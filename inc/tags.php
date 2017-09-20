@@ -11,14 +11,14 @@ class Tags extends DatabaseObjects {
 	public $tag_hub;
 	public $tag_approved;
 
-	public function tag_poll() {
+	public function tag_poll($where) {
 		
 		global $database;
-		
-		$sql = "SELECT * FROM tags";
+		echo $where;
+		$sql = "SELECT * FROM tags $where";
 		$match = $this->query($sql);
-		var_dump($match);
-		
+		return $match;
+				
 	}
 	
 	public function tag_verify_unique() {

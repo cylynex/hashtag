@@ -53,3 +53,23 @@ function add_new_tag() {
 	return false;
 	
 }
+
+
+// Display all tags in a category
+function display_all_in_category() {
+	var category = $('#category').val();
+	var display_category = 1;
+	
+	$.ajax({
+		url: '/js/ajax.php',
+		data: { 
+			display_category:display_category,
+			category:category
+		},
+		type: 'POST',
+		success: function(output) {
+			//alert(output);
+			$('#result_tags').html(output);
+		}
+	});
+}
