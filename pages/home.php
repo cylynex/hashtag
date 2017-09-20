@@ -56,6 +56,7 @@
                 	<?php $c = new Categories(); ?>
                     <label for="category1">Category 1 (Weight 60)</label>
                     <select name="category1" id="category1" class="form-control" onchange="category_select('1');">
+                    	<option default value="0">Select Category</option>
                     	<?php $c->categories_selector();?>
                     </select>
                     
@@ -66,7 +67,8 @@
             	<div class="form-group">
                 	<?php $c = new Categories(); ?>
                     <label for="category2">Category 2 (Weight 25)</label>
-                    <select name="category2" id="category2" class="form-control">
+                    <select name="category2" id="category2" class="form-control" onchange="category_select('2');">
+                    	<option default value="0">Select Category</option>
                     	<?php $c->categories_selector();?>
                     </select>
                     
@@ -77,13 +79,28 @@
             	<div class="form-group">
                 	<?php $c = new Categories(); ?>
                     <label for="category3">Category 3 (Weight 15)</label>
-                    <select name="category3" id="category3" class="form-control">
+                    <select name="category3" id="category3" class="form-control" onchange="category_select('3');">
+                    	<option default value="0">Select Category</option>
                     	<?php $c->categories_selector();?>
                     </select>
                     
                 </div>
             </div>
         </div>
+        
+        <?php
+		// Helper to add dummy test data
+		/*
+		$x = 1;
+		while ($x < 16) {
+			$tags = New Tags;
+			$tags->tag = "Landscape".$x;
+			$tags->tag_category = 3;
+			$tags->create();
+			$x++;
+		}
+		*/
+		?>
     
     </form>
     
@@ -92,10 +109,12 @@
         	<hr>
         </div>
     </div>
-    
+    <style>.result_tags { display:inline; } </style>
     <div class="row">
-		<div class="col-sm-4">
-        	<div id="result_tags"></div>
+		<div class="col-sm-12">
+        	<div id="result_tags1" class="result_tags"></div>
+            <div id="result_tags2" class="result_tags"></div>
+            <div id="result_tags3" class="result_tags"></div>
         </div>
     </div>
     

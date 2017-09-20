@@ -4,17 +4,18 @@ function category_select(section) {
 	var sectionid = "#category"+section;
 	var gettags = $(sectionid).val();
 	
+	var resultbox = "#result_tags"+section;
+	
 	// Ajax query for tag data
 	$.ajax({
 		url: '/js/ajax.php',
 		data: {
-			gettags:gettags
+			gettags:gettags,section:section
 		},
 		type: 'POST',
 		success: function(output) {
 			//alert(output);
-			// Output
-			$('#result_tags').html(output);
+			$(resultbox).html(output);
 		}			
 	});	
 	
