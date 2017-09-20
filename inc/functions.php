@@ -27,6 +27,10 @@ function fetch_page() {
 			$page = "catviewer.php";
 			$GLOBALS['pagetitle'] = "Find Tag - ";
 			break;
+		case "socialviewer" :
+			$page = "socialviewer.php";
+			$GLOBALS['pagetitle'] = "Find Tag - ";
+			break;
 		default:
 			$page = "home.php";
 			$GLOBALS['pagetitle'] = "";

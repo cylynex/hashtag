@@ -38,6 +38,7 @@ class Categories extends DatabaseObjects {
 			echo "</tr>";
 		}
 		?>
+        
         </tbody>
         </table>
         <?php

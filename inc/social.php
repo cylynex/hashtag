@@ -19,6 +19,33 @@ class Social extends DatabaseObjects {
 			?><option value="<?php echo $soc->social_id?>"> <?php echo $soc->social;?></option><?php
 		}
 	}
+	
+	
+	// Category viewer
+	public function social_list() {
+		$out = $this->query("SELECT * FROM social");
+		
+		?>
+        <table class="table hover">
+        <tr>
+            <th width="10%"></th>
+            <th>Social Network</th>
+        </tr>
+        <tbody>
+        
+        <?php		
+		foreach ($out AS $social) {
+			echo "<tr>";
+				echo "<td><i class='fa fa-fw fa-2x ".$social->social_icon."'></i></td>";
+				echo "<td>".$social->social."</td>";
+			echo "</tr>";
+		}
+		?>
+        
+        </tbody>
+        </table>
+        <?php
+	}
 
 }
 
