@@ -110,7 +110,7 @@
         	<hr>
         </div>
     </div>
-    <style>.result_tags { display:inline; } </style>
+    
     <div class="row">
 		<div class="col-sm-12">
         	<div id="result_tags1" class="result_tags"></div>
