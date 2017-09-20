@@ -2,7 +2,7 @@
 <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav side-nav">
         <li>
-            <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+            <a href="/"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
         </li>
         
         <li><a href="/instagram"><i class="fa fa-fw fa-instagram"></i> Instagram Generator</a></li>
