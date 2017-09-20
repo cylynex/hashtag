@@ -5,7 +5,7 @@
         <div class="col-lg-12">
             <h1 class="page-header">
                 #tag
-                <small>social media tag generator</small>
+                <small>social media tag generator </small>
             </h1>
             <ol class="breadcrumb">
                 <li>
