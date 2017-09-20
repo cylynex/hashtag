@@ -1,0 +1,9 @@
+// Styles
+
+/* Home screen results output */
+.result_tags { display:inline; }
+
+/* Status box */
+#StatusDisplay { display:none; }
+
+.point { cursor:pointer }
