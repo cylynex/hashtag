@@ -14,4 +14,5 @@ require_once("social.php");
 // Don't load for ajax
 if ($_SERVER['REQUEST_URI'] != "/js/ajax.php") { ?>
 	<script src="/js/scripts.js"></script>
+    <script src="/js/sb-admin-2.js"></script>
 <?php } ?>
