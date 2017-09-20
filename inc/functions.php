@@ -11,8 +11,12 @@ function fetch_page() {
 			$page = "addtag.php";
 			$GLOBALS['pagetitle'] = "Add Tag - ";
 			break;
-		case "findtags" :
-			$page = "findtags.php";
+		case "instagram" :
+			$page = "instagram.php";
+			$GLOBALS['pagetitle'] = "Find Tag - ";
+			break;
+		case "tagviewer" :
+			$page = "tagviewer.php";
 			$GLOBALS['pagetitle'] = "Find Tag - ";
 			break;
 		default:
