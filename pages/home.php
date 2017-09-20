@@ -92,10 +92,11 @@
 		// Helper to add dummy test data
 		/*
 		$x = 1;
-		while ($x < 16) {
+		while ($x < 9) {
 			$tags = New Tags;
-			$tags->tag = "Landscape".$x;
-			$tags->tag_category = 3;
+			$tags->tag = "SunriseHub".$x;
+			$tags->tag_category = 1;
+			$tags->tag_hub = 1;
 			$tags->create();
 			$x++;
 		}
