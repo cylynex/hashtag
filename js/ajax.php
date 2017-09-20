@@ -80,6 +80,26 @@ function add_tag() {
 }
 
 
+// Add new category
+function add_category() {
+	$addcat = new Categories;
+	$addcat->category = $_POST['category'];
+	$addcat->category_approved = 0;
+
+	if ($addcat->category_verify_unique()) {
+		if ( (!empty($addcat->category)) ) { 
+			$addcat->create();
+			echo "Added Category <b>{$addcat->category}</b>.  If approved, it will be added to the pool.";
+		} else { 
+			echo "Cannot add empty category.";
+		}
+	} else {
+		echo "Could not add category, it already exists within that category.";
+	}
+	
+}
+
+
 // Display Category
 function display_category() {
 	$showcat = new Tags;
@@ -122,5 +142,6 @@ function display_category() {
 
 if ($_POST['gettags']) { get_tags(); }
 if ($_POST['add_tag']) { add_tag(); }
+if ($_POST['add_category']) { add_category(); }
 if ($_POST['display_category']) { display_category(); }
 ?>

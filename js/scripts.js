@@ -59,6 +59,34 @@ function add_new_tag() {
 }
 
 
+// Add new category
+function add_new_category() {
+		
+	// get the data
+	var add_category = 1;
+	var category= $('#category').val();
+
+	$.ajax({
+		url: '/js/ajax.php',
+		data: { 
+			add_category:add_category,
+			category:category
+		},
+		type: 'POST',
+		success: function(output) {
+			//alert(output);
+			$('#StatusDisplay').show();
+			$('#statusbox').html(output);
+			//$('#StatusDisplay').fadeOut(3500);
+			$('#category').val('');
+		}
+	});
+	
+	return false;
+	
+}
+
+
 // Display all tags in a category
 function display_all_in_category() {
 	var category = $('#category').val();

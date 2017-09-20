@@ -9,7 +9,8 @@
         <li><a href="/flickr"><i class="fa fa-fw fa-flickr"></i> Flickr Generator</a></li>
         <li><a href="/tagviewer"><i class="fa fa-fw fa-table"></i> Tag Viewer</a></li>       
         <li><a href="/addtag"><i class="fa fa-fw fa-plus"></i> Add Tags</a></li>
-        <li><a href="/catviewer"><i class="fa fa-fw fa-table"></i> Category Viewer</a></li>
+        <li><a href="/catviewer"><i class="fa fa-fw fa-table"></i> Category Viewer</a></li>      
+        <li><a href="/addcat"><i class="fa fa-fw fa-plus"></i> Add Category</a></li>
         <li><a href="/socialviewer"><i class="fa fa-fw fa-table"></i> Social Network Viewer</a></li>
     
         

@@ -45,6 +45,18 @@ class Categories extends DatabaseObjects {
 	}
 	
 	
+	public function category_verify_unique() {
+		$category = $this->category;
+		$sql = " category = '$category' ";
+		if ($out = $this->check_duplicate_data($sql)) { 
+			return true;
+		} else { 
+			return false;
+		}
+				
+	}
+	
+	
 
 
 
