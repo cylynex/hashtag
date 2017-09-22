@@ -17,23 +17,21 @@
             </ol>
         </div>
     </div>
+    <?php $c = new Categories(); ?>
     
     <form method="post" onsubmit="return add_new_tag();">
     	<input type="hidden" name="addtag" value="1">
         <div class="row">
             <div class="col-sm-6 col-sm-offset-3">
             	<div class="form-group">
-                	<?php $c = new Categories(); ?>
                     <label for="Tag">Tag (Do not include #)</label>
 					<input type="text" name="tag" id="tag" class="form-control">                    
                 </div>
                 <div class="form-group">
-                	<?php $c = new Categories(); ?>
                     <label for="Tag">Is Hub</label>
 					<input type="checkbox" name="tag_hub" id="tag_hub" class="form-control" value="1">
                 </div>
                 <div class="form-group">
-                	<?php $c = new Categories(); ?>
                     <label for="tag_category">Category</label>
                     <select name="tag_category" id="tag_category" class="form-control">
                     	<option default value="0">Select Category</option>

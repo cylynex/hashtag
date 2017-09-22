@@ -34,7 +34,6 @@
             
             <div class="col-sm-4">
             	<div class="form-group">
-                	<?php $c = new Categories(); ?>
                     <label for="category2">Category 2 (Weight 25%)</label>
                     <select name="category2" id="category2" class="form-control" onchange="category_select('2','2');">
                     	<option default value="0">Select Category</option>
@@ -46,7 +45,6 @@
             
             <div class="col-sm-4">
             	<div class="form-group">
-                	<?php $c = new Categories(); ?>
                     <label for="category3">Category 3 (Weight 15%)</label>
                     <select name="category3" id="category3" class="form-control" onchange="category_select('3','2');">
                     	<option default value="0">Select Category</option>
@@ -57,23 +55,7 @@
             </div>
         </div>
         
-        <?php
-		// Helper to add dummy test data
-		
-		/*
-		$x = 1;
-		while ($x < 20) {
-			$tags = New Tags;
-			$tags->tag = "FlickrLandscape".$x;
-			$tags->tag_category = 3;
-			$tags->tag_hub = 0;
-			$tags->tag_sm = 2;
-			$tags->create();
-			$x++;
-		}
-		*/
-		?>
-    
+        
     </form>
     
     <div class="row">

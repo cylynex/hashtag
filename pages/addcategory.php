@@ -23,7 +23,6 @@
         <div class="row">
             <div class="col-sm-6 col-sm-offset-3">
             	<div class="form-group">
-                	<?php $c = new Categories(); ?>
                     <label for="category">Category</label>
 					<input type="text" name="category" id="category" class="form-control">                    
                 </div>
