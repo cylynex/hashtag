@@ -31,20 +31,22 @@
                     <label for="Tag">Is Hub</label>
 					<input type="checkbox" name="tag_hub" id="tag_hub" class="form-control" value="1">
                 </div>
-                <div class="form-group">
+                <div class="form-group" id="catD">
                     <label for="tag_category">Category</label>
                     <select name="tag_category" id="tag_category" class="form-control">
                     	<option default value="0">Select Category</option>
                     	<?php $c->categories_selector();?>
-                    </select>                    
+                    </select>
+                    <div id="catDs"></div>        
                 </div>
-                <div class="form-group">
+                <div class="form-group" id="smD">
                 	<?php $soc = new Social(); ?>
                     <label for="tag_sm">Social Media</label>
                     <select name="tag_sm" id="tag_sm" class="form-control">
                     	<option default value="0">Select Category</option>
                     	<?php $soc->categories_selector();?>
-                    </select>                    
+                    </select>   
+                    <div id="smDs"></div>                 
                 </div>
                 <input type="submit" value="Add Tag" class="btn btn-primary">
                 

@@ -45,7 +45,7 @@ class Database {
 	
 	
 	// Get insert ID
-	public function the_insert_id() {
+	public function insert_id() {
 		return mysqli_insert_id($this->connection);
 	}
 			
@@ -56,12 +56,12 @@ $database = new Database();
 
 
 class DatabaseObjects {
-	// Find all abstract
+	// Find all
 	public static function find_all() {
 		return static::query("SELECT * FROM ". static::$db_table );
 	}
 	
-	// Find by ID abstract
+	// Find by ID
 	public static function find_by_id($id,$fieldname) {
 		global $database;
 		$the_result_array = static::query("SELECT * FROM ". static::$db_table ." WHERE $fieldname = '$id' LIMIT 1 ");
@@ -70,7 +70,7 @@ class DatabaseObjects {
 	}
 	
 	
-	// Find query
+	// Query
 	public static function query($sql) {
 		global $database;
 		$out = $database->query($sql);
@@ -94,26 +94,16 @@ class DatabaseObjects {
 	private static function instantiation($ubid) {
 		
 		$calling_class = get_called_class();
-		$the_object = new $calling_class;
+		$obj = new $calling_class;
 	
-		foreach ($ubid AS $the_attribute => $value) {
-			/*if ($the_object->has_the_attribute($the_attribute)) {
-				$the_object->$the_attribute = $value;
-			}*/
-			$the_object->$the_attribute = $value;
-			
+		foreach ($ubid AS $attribute => $value) {
+			$obj->$attribute = $value;
 		}
 		
-		return $the_object;
+		return $obj;
 	}
 	
 	
-	// find attribute 
-	private function has_the_attribute($the_attribute) {
-		$object_properties = get_object_vars($this);  //PHP function
-		array_key_exists($the_attribute,$object_properties); // PHP function too	
-	}
-		
 	
 	// Insert into DB
 	public function create() {
@@ -128,10 +118,8 @@ class DatabaseObjects {
 		
 		// Run the query and return
 		if ($database->query($sql)) {
-			// success
 			return true;
 		} else {
-			// fail
 			return false;
 		}
 		
@@ -197,9 +185,9 @@ class DatabaseObjects {
 	}
 	
 	
-	// abstration for the properties (not really used either)
+	// abstration for the properties
 	protected function properties() {
-		// return get_object_properties($this);
+		
 		$properties = array();
 		foreach (static::$db_table_fields AS $db_field) {
 			if (property_exists($this, $db_field)) {

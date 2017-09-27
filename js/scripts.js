@@ -26,33 +26,53 @@ function category_select(section,socialmedia) {
 // Add new tags
 function add_new_tag() {
 	
-	
 	// get the data
 	var add_tag = 1;
 	var tag = $('#tag').val();
 	var tag_hub = $('#tag_hub').is(":checked");
 	var tag_category = $('#tag_category').val();
 	var tag_sm = $('#tag_sm').val();
+	var error = 0;
 	
-	$.ajax({
-		url: '/js/ajax.php',
-		data: { 
-			add_tag:add_tag,
-			tag:tag,
-			tag_hub:tag_hub,
-			tag_category:tag_category,
-			tag_sm:tag_sm
-		},
-		type: 'POST',
-		success: function(output) {
-			//alert(output);
-			$('#StatusDisplay').show();
-			$('#statusbox').html(output);
-			//$('#StatusDisplay').fadeOut(3500);
-			$('#tag').val('');
-			$('#tag_category').val('');
-		}
-	});
+	// Validate that category and SM are set.
+	$('#catD').attr('class','form-group');
+	$('#smD').attr('class','form-group');
+	$('#catDs').html();
+	$('#smDs').html();
+	
+	if (tag_category == 0) {
+		$('#catD').attr('class', 'form-group has-error');
+		$('#catDs').html('You must select a category');
+		error++;
+	} 
+	
+	if (tag_sm == 0) {
+		$('#smD').attr('class', 'form-group has-error');
+		$('#smDs').html('You must select a category');
+		error++;
+	} 
+	
+	if (error == 0) { 
+		$.ajax({
+			url: '/js/ajax.php',
+			data: { 
+				add_tag:add_tag,
+				tag:tag,
+				tag_hub:tag_hub,
+				tag_category:tag_category,
+				tag_sm:tag_sm
+			},
+			type: 'POST',
+			success: function(output) {
+				//alert(output);
+				$('#StatusDisplay').show();
+				$('#statusbox').html(output);
+				//$('#StatusDisplay').fadeOut(3500);
+				$('#tag').val('');
+				$('#tag_category').val('');
+			}
+		});
+	}
 	
 	return false;
 	

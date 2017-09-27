@@ -24,7 +24,7 @@ function get_tags() {
 			break;
 	}
 	
-	// Standard query for unweighted results
+	// Standard query for unweighted results - deprecated
 	// $tags = Tags::query("SELECT * FROM tags WHERE tag_category = '$tc' ORDER BY rand() LIMIT $limit");
 
 	// Hub weighted query (approx 75% - hardcoded for now)
