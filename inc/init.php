@@ -10,6 +10,8 @@ require_once("functions.php");
 require_once("categories.php");
 require_once("tags.php");
 require_once("social.php");
+require_once("photos.php");
+
 
 // Don't load for ajax
 if ($_SERVER['REQUEST_URI'] != "/js/ajax.php") { ?>

@@ -125,3 +125,9 @@ function display_all_in_category() {
 		}
 	});
 }
+
+
+// Get photo description requested
+function fetch_photo_desc() {
+	alert("here");
+}

@@ -35,6 +35,10 @@ function fetch_page() {
 			$page = "socialviewer.php";
 			$GLOBALS['pagetitle'] = "Find Tag - ";
 			break;
+		case "desc" :
+			$page = "description.php";
+			$GLOBALS['pagetitle'] = "Create Description - ";
+			break;
 		default:
 			$page = "home.php";
 			$GLOBALS['pagetitle'] = "";
