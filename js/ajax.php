@@ -140,8 +140,28 @@ function display_category() {
 }
 
 
+// Gets photo description
+function photo_desc() {
+	echo "hereinajax";
+	$photod_type = $_POST['photo_desc'];
+	$title = $_POST['title'];
+	$location = $_POST['location'];
+	$description = $_POST['description'];
+	
+	// Get matching data
+	//$content = $this->query("SELECT * FROM photo_desc_data WHERE photod_id = '$photod_type' ");
+	//var_dump($content);
+	
+	//$output = "Title: {$title}<br>";
+	//$output .= "Location: {$location}<br>";
+	
+	
+}
+
+
 if ($_POST['gettags']) { get_tags(); }
 if ($_POST['add_tag']) { add_tag(); }
 if ($_POST['add_category']) { add_category(); }
 if ($_POST['display_category']) { display_category(); }
+if ($_POST['photo_desc']) { photo_desc(); }
 ?>

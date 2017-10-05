@@ -129,5 +129,29 @@ function display_all_in_category() {
 
 // Get photo description requested
 function fetch_photo_desc() {
-	alert("here");
+	
+	var photod_type = $('#category').val();
+	var title = $('#title').val();
+	var location = $('#location').val();
+	var description = $('#description').val();
+	var photo_desc = photod_type;
+	alert("sa");
+	$.ajax({
+		url: '../js/ajax.php',
+		data: { 
+			photo_desc:photo_desc,
+			title:title,
+			location:location,
+			description:description
+		},
+		type: 'POST',
+		success: function(output) {
+			alert(output);
+			//$('#result_desc').html(output);
+		}
+	});
+	
+	
+	
+	return false;
 }

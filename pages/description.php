@@ -21,26 +21,56 @@
     <div class="row">
     	<div class="col-sm-12">
             
-            <form method="post" action="">
+            <form method="post" onsubmit="return fetch_photo_desc();">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
                             <?php $phototype = new Photos; ?>
                             <label for="category">Select appropriate category to fetch description.</label>
-                            <select name="category" id="category" class="form-control" onchange="fetch_photo_desc();">
+                            <select name="category" id="category" class="form-control">
                                 <option default value="0">Select Category</option>
                                 <?php $phototype->photo_select();?>
                             </select>
                             
                         </div>
                     </div>
-                </div>            
+                </div> 
+                
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="title">Photo Title</label>
+                            <input type="text" name="title" id="title" class="form-control" />                            
+                        </div>
+                    </div>
+                </div> 
+                
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="location">Photo Location</label>
+                            <input type="text" name="location" id="location" class="form-control" />                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea name="description" id="description" class="form-control"></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <input type="submit" class="btn btn-default btn-primary" value="Fetch" />
+                           
             </form>
             
             
             <div class="row">
                 <div class="col-sm-12">
-                    <div id="result_tags" class="result_tags"></div>                    
+                    <div id="result_description" class="result_tags"></div>                    
                 </div>
             </div>
             
